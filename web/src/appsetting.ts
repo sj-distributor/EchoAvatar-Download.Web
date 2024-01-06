@@ -1,6 +1,6 @@
 export interface IAppSettings {
-  serverUrl: string;
-  tokenKey: string;
+  downloadUrlWindow: string;
+  downloadUrlMac: string;
 }
 
 export const InitialAppSetting = async () => {
