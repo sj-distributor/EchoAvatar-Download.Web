@@ -19,3 +19,25 @@ code {
 .ant-card-body {
   padding: 0 !important;
 }
+
+:root {
+  --login-border-linear-color: linear-gradient(
+    159deg,
+    #6831cb 54.02%,
+    #d453fb 83.71%,
+    #d155f6 95.68%
+  );
+  --login-bg-linear-color: linear-gradient(to right, white, white);
+
+  --background-box: padding-box, border-box;
+  --border-style: 0.2rem solid transparent;
+}
+
+.ant-card-hoverable {
+  border-radius: 5rem;
+  border: var(--border-style);
+  background-clip: var(--background-box);
+  background-origin: var(--background-box);
+  background-image: var(--login-bg-linear-color),
+    var(--login-border-linear-color);
+}
