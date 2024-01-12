@@ -20,13 +20,13 @@ export const Home = () => {
         <span className="text-[2.5rem] text-[#2a1b56] font-black tracking-[.14em]">
           请选择相应的操作系统进行下载
         </span>
-        <span className="py-5 text-[#2a1b56] text-[1.5rem]">
+        <span className="text-[#2a1b56] text-[1.5rem] pt-3">
           同时支持Windows，macOS
         </span>
-        <div className="flex justify-center items-center">
+        <div className="flex justify-center items-center flex-wrap">
           <div className="flex flex-col mx-8">
             <Card
-              className="flex flex-row rounded-full px-[4rem] py-5 items-center justify-center text-[#2a1b56]"
+              className="flex flex-row rounded-full px-[4rem] py-5 mt-5 items-center justify-center text-[#2a1b56]"
               onClick={() => onClickDownload(true)}
               hoverable
             >
@@ -38,7 +38,7 @@ export const Home = () => {
           </div>
           <div className="flex flex-col justify-center items-center mx-8">
             <Card
-              className="flex flex-row rounded-full px-[4rem] py-5 items-center justify-center text-[#2a1b56]"
+              className="flex flex-row rounded-full px-[4rem] py-5 mt-5 items-center justify-center text-[#2a1b56]"
               onClick={() => onClickDownload(false)}
               hoverable
             >
