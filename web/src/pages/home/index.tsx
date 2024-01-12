@@ -10,17 +10,22 @@ export const Home = () => {
   return (
     <div
       className="flex flex-col w-screen h-screen"
-      style={{ backgroundImage: `url(${wave})` }}
+      style={{
+        backgroundImage: `url(${wave})`,
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+      }}
     >
-      <div className="flex flex-col items-center flex-1 justify-center">
+      <div className="flex flex-col items-center flex-1 justify-center p-5">
         <img src={eaLogo} className="w-[12rem]" />
-        <span className="text-[2.5rem] text-[#2a1b56] font-black tracking-[.35em] mt-5">
+        <span className="text-[2.5rem] text-[#2a1b56] font-black tracking-[.35em] mt-5 whitespace-nowrap">
           欢迎使用 Echo Avatar
         </span>
-        <span className="text-[2.5rem] text-[#2a1b56] font-black tracking-[.14em]">
+        <span className="text-[2.5rem] text-[#2a1b56] font-black tracking-[.14em] whitespace-nowrap">
           请选择相应的操作系统进行下载
         </span>
-        <span className="text-[#2a1b56] text-[1.5rem] pt-3">
+        <span className="text-[#2a1b56] text-[1.5rem] pt-3 whitespace-nowrap">
           同时支持Windows，macOS
         </span>
         <div className="flex justify-center items-center flex-wrap">
