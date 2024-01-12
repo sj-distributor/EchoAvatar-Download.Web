@@ -21,7 +21,7 @@ export const Home = () => {
           请选择相应的操作系统进行下载
         </span>
         <span className="py-5 text-[#2a1b56] text-[1.5rem]">
-          同时支持macOS，Windows
+          同时支持Windows，macOS
         </span>
         <div className="flex justify-center items-center">
           <div className="flex flex-col mx-8">
