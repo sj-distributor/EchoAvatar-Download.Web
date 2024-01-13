@@ -5,13 +5,15 @@ export const useAction = () => {
 
   const downloadUrlMac = setting.downloadUrlMac;
 
-  const onClickDownload = (isWindow: boolean) => {
+  const onClickDownload = async (isWindow: boolean) => {
     if (!downloadUrlWindow || !downloadUrlMac) return;
     const downloadLink = document.createElement("a");
 
     downloadLink.href = isWindow ? downloadUrlWindow : downloadUrlMac;
     downloadLink.download = "installer";
     document.body.appendChild(downloadLink);
+
+    await new Promise((resolve) => setTimeout(resolve, 0));
 
     downloadLink.click();
 
