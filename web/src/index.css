@@ -33,10 +33,11 @@ code {
     #d453fb 83.71%,
     #d155f6 95.68%
   );
-  --login-bg-linear-color: linear-gradient(to right, white, white);
+  --login-bg-linear-color: linear-gradient(to right, #2a1b56, #2a1b56);
 
   --background-box: padding-box, border-box;
   --border-style: 0.2rem solid transparent;
+  --login-border-linear-color-hover: linear-gradient(to right, #fff, #fff);
 }
 
 .ant-card-hoverable {
@@ -46,4 +47,13 @@ code {
   background-origin: var(--background-box);
   background-image: var(--login-bg-linear-color),
     var(--login-border-linear-color);
+}
+
+.ant-card-hoverable:hover {
+  border-radius: 5rem;
+  border: var(--border-style);
+  background-clip: var(--background-box);
+  background-origin: var(--background-box);
+  background-image: var(--login-bg-linear-color),
+    var(--login-border-linear-color-hover);
 }
