@@ -9,7 +9,7 @@ export const Home = () => {
 
   return (
     <div
-      className="flex flex-col w-screen h-screen bg-black"
+      className="flex flex-col w-screen h-screen bg-black overflow-auto no-scrollbar"
       style={{
         backgroundImage: `url(${wave})`,
         backgroundPosition: "center",
