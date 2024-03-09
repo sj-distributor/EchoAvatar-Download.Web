@@ -3,9 +3,10 @@ import { message } from "antd";
 export const useAction = () => {
   const setting = (window as any).appSettings;
 
-  const downloadUrlWindow = setting.downloadUrlWindow;
+  const downloadUrlWindow =
+    setting.downloadUrl + "downloads/EchoAvatar-win.exe";
 
-  const downloadUrlMac = setting.downloadUrlMac;
+  const downloadUrlMac = setting.downloadUrl + "downloads/EchoAvatar-mac.dmg";
 
   const onClickDownload = async (isWindow: boolean) => {
     if ((isWindow && !downloadUrlWindow) || (!isWindow && !downloadUrlMac)) {
