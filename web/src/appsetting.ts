@@ -1,6 +1,4 @@
 export interface IAppSettings {
-  downloadUrlWindow: string;
-  downloadUrlMac: string;
   downloadUrl: string;
 }
 
