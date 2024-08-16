@@ -1,23 +1,32 @@
+import { message } from "antd";
+
 export const useAction = () => {
   const setting = (window as any).appSettings;
 
-  const downloadUrlWindow = setting.downloadUrlWindow;
+  const downloadUrlWindow =
+    setting.downloadUrl + "downloads/EchoAvatar-win.exe";
 
-  const downloadUrlMac = setting.downloadUrlMac;
+  const downloadUrlMac = setting.downloadUrl + "downloads/EchoAvatar-mac.dmg";
 
   const onClickDownload = async (isWindow: boolean) => {
-    if (!downloadUrlWindow || !downloadUrlMac) return;
+    if ((isWindow && !downloadUrlWindow) || (!isWindow && !downloadUrlMac)) {
+      message.warning("下載鏈接不存在！");
+    }
     const downloadLink = document.createElement("a");
 
     downloadLink.href = isWindow ? downloadUrlWindow : downloadUrlMac;
     downloadLink.download = "installer";
     document.body.appendChild(downloadLink);
 
-    await new Promise((resolve) => setTimeout(resolve, 0));
+    try {
+      await new Promise((resolve) => setTimeout(resolve, 0));
 
-    downloadLink.click();
-
-    document.body.removeChild(downloadLink);
+      downloadLink.click();
+    } catch (error) {
+      message.error("下载失败");
+    } finally {
+      document.body.removeChild(downloadLink);
+    }
   };
 
   return { onClickDownload };
