@@ -3,14 +3,17 @@ import { message } from "antd";
 export const useAction = () => {
   const setting = (window as any).appSettings;
 
-  const downloadUrlWindow =
-    setting.downloadUrl + "downloads/EchoAvatar-win.exe";
+  const downloadUrlWindow = setting.downloadUrlWindow;
 
-  const downloadUrlMac = setting.downloadUrl + "downloads/EchoAvatar-mac.dmg";
+  const downloadUrlMac = setting.downloadUrlMac;
+
+  const env = setting.env;
 
   const onClickDownload = async (isWindow: boolean) => {
     if ((isWindow && !downloadUrlWindow) || (!isWindow && !downloadUrlMac)) {
       message.warning("下載鏈接不存在！");
+
+      return;
     }
     const downloadLink = document.createElement("a");
 
@@ -29,5 +32,5 @@ export const useAction = () => {
     }
   };
 
-  return { onClickDownload };
+  return { env, onClickDownload };
 };
