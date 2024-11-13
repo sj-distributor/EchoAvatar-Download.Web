@@ -5,7 +5,7 @@ import eaLogo from "../../assets/ea-logo.png";
 import wave from "../../assets/wave.png";
 import { useAction } from "./hook";
 export const Home = () => {
-  const { onClickDownload } = useAction();
+  const { env, onClickDownload } = useAction();
 
   return (
     <div
@@ -20,7 +20,7 @@ export const Home = () => {
       <div className="flex flex-col items-center flex-1 justify-center p-5">
         <img src={eaLogo} className="w-[12rem]" />
         <span className="text-[2.5rem] text-[#fff] font-black tracking-[.35em] mt-5 whitespace-nowrap">
-          欢迎使用 Echo Avatar
+          欢迎使用 Echo Avatar {env === "qas" && "Test"}
         </span>
         <span className="text-[2.5rem] text-[#fff] font-black tracking-[.14em] whitespace-nowrap">
           请选择相应的操作系统进行下载
